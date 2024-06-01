@@ -10,9 +10,11 @@ const Header = ({ className: cusClassName }: { className?: string }) => {
 
     return (
         <header className={cx('header', classes)}>
-            <Link to={routes.home} className={cx('logo')}>
-                777hanh TRANTHIENTHANH
-            </Link>
+            <div className="container">
+                <Link to={routes.home} className={cx('logo')}>
+                    777hanh TRANTHIENTHANH
+                </Link>
+            </div>
         </header>
     );
 };

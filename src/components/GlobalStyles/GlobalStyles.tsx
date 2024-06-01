@@ -1,5 +1,6 @@
 import React from 'react';
 import './reset.scss';
+import './grid.scss';
 import './GlobalStyles.scss';
 // font
 import '~assets/fonts/stylesheet.scss';
