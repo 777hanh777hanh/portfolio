@@ -1,0 +1,19 @@
+// variables
+
+:root {
+    --background-color: #2f2f2f;
+    --text-color: #f2f2f2;
+    --ff: 'Pixellari';
+    --ff-2: 'Futura';
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--ff-2);
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
