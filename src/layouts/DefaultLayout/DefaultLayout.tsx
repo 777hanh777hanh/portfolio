@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Header } from '~/components';
+import { Header, Footer } from '~/components';
 
 const DefaultLayout = ({ children }: { children: ReactNode }) => {
     return (
@@ -11,6 +11,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
             <main>{children}</main>
 
             {/* Footer */}
+            <Footer />
         </>
     );
 };

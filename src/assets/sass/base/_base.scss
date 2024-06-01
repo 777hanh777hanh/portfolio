@@ -1,0 +1,35 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--ff-2);
+    font-size: 1.6rem;
+    line-height: 144.455%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+img,
+button,
+input,
+[tabindex],
+select,
+label,
+textarea {
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}

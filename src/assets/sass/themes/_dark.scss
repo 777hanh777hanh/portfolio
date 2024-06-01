@@ -1,0 +1,17 @@
+html {
+    --background-color: #2f2f2f;
+    --text-color: #f2f2f2;
+    --ff: 'Pixellari';
+    --ff-2: 'Futura';
+
+    --primary-color: #98623c;
+
+    // footer
+
+    --footer-bg-color: #1f1f1f;
+    --footer-color: #9f9f9f;
+    --footer-icon-color: brightness(0) saturate(100%) invert(82%) sepia(1%) saturate(1425%) hue-rotate(317deg)
+        brightness(79%) contrast(84%);
+    --footer-icon-hover-color: brightness(0) saturate(100%) invert(42%) sepia(23%) saturate(1061%)
+        hue-rotate(342deg) brightness(93%) contrast(88%);
+}

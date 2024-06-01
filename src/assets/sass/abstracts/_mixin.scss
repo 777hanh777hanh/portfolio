@@ -1,0 +1,18 @@
+$grid-breakpoints: (
+    xl: 1400px,
+    lg: 1200px,
+    md: 992px,
+    sm: 768px,
+    xs: 576px,
+);
+
+@mixin screen($key) {
+    $breakpoint: map-get($grid-breakpoints, $key);
+    @if ($breakpoint) {
+        @media (max-width: ($breakpoint - 0.02)) {
+            @content;
+        }
+    } @else {
+        @warn "Invalid breakpoint: #{$key}";
+    }
+}
