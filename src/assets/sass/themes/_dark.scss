@@ -14,4 +14,14 @@ html {
         brightness(79%) contrast(84%);
     --footer-icon-hover-color: brightness(0) saturate(100%) invert(42%) sepia(23%) saturate(1061%)
         hue-rotate(342deg) brightness(93%) contrast(88%);
+
+    // header
+    --header-bg-color: #36150b;
+    --header-bg-opacity-color: #36150ba0;
+    --header-cta-icon-hover-color: brightness(0) saturate(100%) invert(9%) sepia(23%) saturate(3659%)
+        hue-rotate(345deg) brightness(95%) contrast(96%);
+    --header-icon-color: brightness(0) saturate(100%) invert(94%) sepia(0%) saturate(3194%) hue-rotate(183deg)
+        brightness(81%) contrast(61%);
+    --header-icon-hover-color: brightness(0) saturate(100%) invert(42%) sepia(23%) saturate(1061%)
+        hue-rotate(342deg) brightness(93%) contrast(88%);
 }

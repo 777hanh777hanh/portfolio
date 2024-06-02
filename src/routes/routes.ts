@@ -6,6 +6,7 @@ const routes = {
     about: '/about',
     project: '/project',
     resume: '/resume',
+    source: 'https://github.com/777hanh777hanh/portfolio',
 };
 
 type RoutesProps = {

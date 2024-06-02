@@ -1,0 +1,67 @@
+@use '~assets/sass/abstracts';
+
+.image,
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link {
+    position: relative;
+    gap: 8px;
+    padding: 10px 4px;
+    align-self: center;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: var(--ff);
+    color: #aaa;
+
+    transition: color 0.2s ease-in-out;
+
+    @include abstracts.screen(md) {
+        font-size: calc(1.6rem + 1vw);
+    }
+
+    &:hover,
+    &.active {
+        color: var(--primary-color);
+
+        .icon {
+            filter: var(--header-icon-hover-color);
+        }
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 999px;
+
+        transition: 0.4s linear;
+        transition-property: width;
+    }
+}
+
+.image {
+    width: 18px;
+    padding-bottom: 3px;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: var(--header-icon-color);
+}

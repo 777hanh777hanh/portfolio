@@ -1,0 +1,187 @@
+@use '~assets/sass/abstracts';
+
+.navbar {
+    @include abstracts.screen(md) {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        width: 100%;
+
+        visibility: hidden;
+        opacity: 0;
+        translate: 0 -60%;
+        transition: 0.2s linear;
+        transition-property: visibility, opacity, translate, height;
+
+        background-color: var(--header-bg-color);
+    }
+}
+
+.navbar.show {
+    @include abstracts.screen(md) {
+        visibility: visible;
+        opacity: 1;
+        translate: 0 0%;
+        box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.nav {
+    display: flex;
+    gap: 60px;
+    height: 100%;
+
+    @include abstracts.screen(md) {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        width: 100%;
+        padding: 40px 0 40px;
+
+        &-item {
+            width: 60%;
+            margin: 0 auto;
+
+            @include abstracts.screen(xs) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+
+    animation: animation ease-in forwards;
+    animation-timeline: view();
+    animation-range-start: calc(100vh);
+    animation-range-end: calc(100vh + 70px);
+
+    transition: height 0.2s ease-in-out;
+    z-index: 9999;
+
+    @include abstracts.screen(md) {
+        animation: none;
+        background-color: var(--header-bg-color);
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        margin: 0 auto;
+        padding: 4px 11px;
+
+        background-color: var(--header-bg-color);
+        border-radius: 6px;
+        border: 2px solid #aaa;
+        transition: 0.2s ease-in-out;
+        transition-property: background-color, border-color;
+
+        @include abstracts.screen(md) {
+            width: 180px;
+            height: 40px;
+        }
+        @include abstracts.screen(xs) {
+            width: 100%;
+            height: 40px;
+        }
+
+        &:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+
+            .header__cta-icon {
+                filter: var(--header-cta-icon-hover-color);
+            }
+        }
+    }
+
+    &__cta-icon {
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+        filter: var(--header-icon-color);
+
+        transition: filter 0.15s ease-in-out;
+    }
+
+    &__menu-btn {
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        width: 48px;
+        height: 48px;
+
+        @include abstracts.screen(md) {
+            display: flex;
+        }
+    }
+
+    .show &__menu-btn {
+        @include abstracts.screen(md) {
+            position: relative;
+            display: flex;
+        }
+    }
+
+    &__menu-btn-line {
+        width: 24px;
+        height: 3px;
+        border-radius: 999px;
+        background-color: var(--text-color);
+        transition: 0.2s linear;
+        transition-property: rotate, visibility;
+    }
+
+    .show &__menu-btn-line {
+        position: absolute;
+    }
+
+    .show &__menu-btn-line:nth-child(1) {
+        transform-origin: center;
+        rotate: 225deg;
+    }
+    .show &__menu-btn-line:nth-child(2) {
+        visibility: hidden;
+    }
+    .show &__menu-btn-line:nth-child(3) {
+        transform-origin: center;
+        rotate: -225deg;
+    }
+}
+
+@keyframes animation {
+    to {
+        background-color: var(--header-bg-color);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    @keyframes animation {
+        to {
+            background-color: var(--header-bg-opacity-color);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.4);
+        }
+    }
+}
+
+.logo {
+    height: 100%;
+}
