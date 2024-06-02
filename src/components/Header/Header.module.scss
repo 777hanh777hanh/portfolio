@@ -52,12 +52,19 @@
 }
 
 .header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
     background: transparent;
 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-animation: animation ease-in forwards;
     animation: animation ease-in forwards;
     animation-timeline: view();
     animation-range-start: calc(100vh);
@@ -67,6 +74,7 @@
     z-index: 9999;
 
     @include abstracts.screen(md) {
+        -webkit-animation: none;
         animation: none;
         background-color: var(--header-bg-color);
     }
@@ -106,6 +114,7 @@
             border-color: var(--primary-color);
 
             .header__cta-icon {
+                -webkit-filter: var(--header-cta-icon-hover-color);
                 filter: var(--header-cta-icon-hover-color);
             }
         }
@@ -114,10 +123,16 @@
     &__cta-icon {
         width: 24px;
         height: 24px;
+        -o-object-fit: cover;
         object-fit: cover;
+        -webkit-filter: var(--header-icon-color);
         filter: var(--header-icon-color);
 
+        transition: -webkit-filter 0.15s ease-in-out;
+
         transition: filter 0.15s ease-in-out;
+
+        transition: filter 0.15s ease-in-out, -webkit-filter 0.15s ease-in-out;
     }
 
     &__menu-btn {
@@ -166,6 +181,12 @@
     }
 }
 
+@-webkit-keyframes animation {
+    to {
+        background-color: var(--header-bg-color);
+    }
+}
+
 @keyframes animation {
     to {
         background-color: var(--header-bg-color);
@@ -173,9 +194,18 @@
 }
 
 @supports (animation-timeline: view()) {
+    @-webkit-keyframes animation {
+        to {
+            background-color: var(--header-bg-opacity-color);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.4);
+        }
+    }
     @keyframes animation {
         to {
             background-color: var(--header-bg-opacity-color);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.4);
         }
