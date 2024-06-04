@@ -9,22 +9,35 @@ html {
 
     // footer
 
-    --footer-bg-color: #1f1f1f;
-    --footer-color: #9f9f9f;
+    --footer-bg-color: #30231d;
+    --footer-color: #aaa;
     --footer-icon-color: brightness(0) saturate(100%) invert(82%) sepia(1%) saturate(1425%) hue-rotate(317deg)
         brightness(79%) contrast(84%);
-    --footer-icon-hover-color: brightness(0) saturate(100%) invert(42%) sepia(23%) saturate(1061%)
-        hue-rotate(342deg) brightness(93%) contrast(88%);
+    --footer-icon-hover-color: brightness(0) saturate(100%) invert(85%) sepia(23%) saturate(784%)
+        hue-rotate(331deg) brightness(97%) contrast(96%);
 
     // header
-    --header-bg-color: #36150b;
-    --header-bg-opacity-color: #36150ba0;
+    --header-bg-color: #30231d;
+    --header-bg-opacity-color: #30231da0;
+    --header-navbar-shadow-color: rgba(255, 255, 255, 0.4);
+
+    --header-cta-bg-color: #ccb6ad;
+    --header-cta-bg-hover-color: #f4c790;
+    --header-cta-icon-color: brightness(0) saturate(100%) invert(9%) sepia(6%) saturate(4209%)
+        hue-rotate(334deg) brightness(101%) contrast(86%); //#30231d
     --header-cta-icon-hover-color: brightness(0) saturate(100%) invert(9%) sepia(23%) saturate(3659%)
         hue-rotate(345deg) brightness(95%) contrast(96%);
+
     --header-icon-color: brightness(0) saturate(100%) invert(94%) sepia(0%) saturate(3194%) hue-rotate(183deg)
         brightness(81%) contrast(61%);
     --header-icon-hover-color: brightness(0) saturate(100%) invert(42%) sepia(23%) saturate(1061%)
         hue-rotate(342deg) brightness(93%) contrast(88%);
+
+    // nav-link
+    --nav-link-text-color: #aaa;
+    --nav-link-text-active-color: #f4c790;
+    --nav-link-icon-active-color: brightness(0) saturate(100%) invert(85%) sepia(23%) saturate(784%)
+        hue-rotate(331deg) brightness(97%) contrast(96%);
 
     // home
     --socials-icon-color: brightness(0) saturate(100%) invert(82%) sepia(1%) saturate(1425%)

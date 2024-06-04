@@ -23,7 +23,7 @@
         visibility: visible;
         opacity: 1;
         translate: 0 0%;
-        box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 4px 0px var(--header-navbar-shadow-color);
     }
 }
 
@@ -57,6 +57,7 @@
     top: 0;
     left: 0;
     right: 0;
+    padding: 20px 0;
     background: transparent;
 
     -webkit-user-select: none;
@@ -94,9 +95,8 @@
         margin: 0 auto;
         padding: 4px 11px;
 
-        background-color: var(--header-bg-color);
+        background-color: var(--header-cta-bg-color);
         border-radius: 6px;
-        border: 2px solid #aaa;
         transition: 0.2s ease-in-out;
         transition-property: background-color, border-color;
 
@@ -110,13 +110,7 @@
         }
 
         &:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-
-            .header__cta-icon {
-                -webkit-filter: var(--header-cta-icon-hover-color);
-                filter: var(--header-cta-icon-hover-color);
-            }
+            background: var(--header-cta-bg-hover-color);
         }
     }
 
@@ -125,8 +119,8 @@
         height: 24px;
         -o-object-fit: cover;
         object-fit: cover;
-        -webkit-filter: var(--header-icon-color);
-        filter: var(--header-icon-color);
+        -webkit-filter: var(--header-cta-icon-color);
+        filter: var(--header-cta-icon-color);
 
         transition: -webkit-filter 0.15s ease-in-out;
 
@@ -199,7 +193,7 @@
             background-color: var(--header-bg-opacity-color);
             -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
-            box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 4px 0px var(--header-navbar-shadow-color);
         }
     }
     @keyframes animation {
@@ -207,7 +201,7 @@
             background-color: var(--header-bg-opacity-color);
             -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
-            box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 4px 0px var(--header-navbar-shadow-color);
         }
     }
 }

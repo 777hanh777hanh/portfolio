@@ -18,7 +18,7 @@
     line-height: 1;
     text-transform: uppercase;
     font-family: var(--ff);
-    color: #aaa;
+    color: var(--nav-link-text-color);
 
     transition: color 0.2s ease-in-out;
 
@@ -28,10 +28,10 @@
 
     &:hover,
     &.active {
-        color: var(--primary-color);
+        color: var(--nav-link-text-active-color);
 
         .icon {
-            filter: var(--header-icon-hover-color);
+            filter: var(--nav-link-icon-active-color);
         }
 
         &::after {
@@ -46,7 +46,7 @@
         left: 0;
         width: 0%;
         height: 4px;
-        background: var(--primary-color);
+        background: var(--nav-link-text-active-color);
         border-radius: 999px;
 
         transition: 0.4s linear;

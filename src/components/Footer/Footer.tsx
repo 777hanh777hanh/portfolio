@@ -22,7 +22,9 @@ const Footer: FooterProps = ({ className: cusClassName }) => {
 
                     {/* Footer Copyright */}
                     <div className={cx('footer__col', 'footer__copyright')}>
-                        <div className={cx('footer__title')}>Copyright © 2024 | Tran Thien Thanh</div>
+                        <div className={cx('footer__copyright-desc')}>
+                            Copyright © 2024 | Tran Thien Thanh
+                        </div>
                     </div>
 
                     {/* Footer Socials */}
