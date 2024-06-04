@@ -1,10 +1,11 @@
 html {
-    --background-color: #2f2f2f;
+    --background-color: linear-gradient(0deg, #402f27 0%, #503a31 50%, #503a31 75%, #402f27 100%);
     --text-color: #f2f2f2;
+    --text-highlight-color: #f4c790;
     --ff: 'Pixellari';
     --ff-2: 'Futura';
 
-    --primary-color: #98623c;
+    --primary-color: #30231d;
 
     // footer
 
@@ -24,4 +25,10 @@ html {
         brightness(81%) contrast(61%);
     --header-icon-hover-color: brightness(0) saturate(100%) invert(42%) sepia(23%) saturate(1061%)
         hue-rotate(342deg) brightness(93%) contrast(88%);
+
+    // home
+    --socials-icon-color: brightness(0) saturate(100%) invert(82%) sepia(1%) saturate(1425%)
+        hue-rotate(317deg) brightness(79%) contrast(84%);
+    --socials-icon-hover-color: brightness(0) saturate(100%) invert(77%) sepia(21%) saturate(650%)
+        hue-rotate(350deg) brightness(104%) contrast(91%); //#f4c790
 }

@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
             <Header />
 
             {/* Main */}
-            <main style={{ height: '200dvh', background: '' }}>{children}</main>
+            <main style={{ minHeight: '90dvh' }}>{children}</main>
 
             {/* Footer */}
             <Footer />
