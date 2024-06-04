@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useClassNames } from '~/hooks';
@@ -39,6 +39,10 @@ const Header = ({ className: cusClassName }: { className?: string }) => {
         }
     };
 
+    const handleHiddenMenu = useCallback(() => {
+        setIsShow(false);
+    }, []);
+
     return (
         <header className={cx('header', classes, { show: isShow })}>
             <div className="container">
@@ -65,17 +69,28 @@ const Header = ({ className: cusClassName }: { className?: string }) => {
                     <nav className={cx('navbar', { show: isShow })}>
                         <ul className={cx('nav')}>
                             <li className={cx('nav__item-wrap')}>
-                                <NavLinkItem className={cx('nav-item')} to={routes.home} icon={icons.home}>
+                                <NavLinkItem
+                                    onClick={handleHiddenMenu}
+                                    className={cx('nav-item')}
+                                    to={routes.home}
+                                    icon={icons.home}
+                                >
                                     Home
                                 </NavLinkItem>
                             </li>
                             <li className={cx('nav__item-wrap')}>
-                                <NavLinkItem className={cx('nav-item')} to={routes.about} icon={icons.user}>
+                                <NavLinkItem
+                                    onClick={handleHiddenMenu}
+                                    className={cx('nav-item')}
+                                    to={routes.about}
+                                    icon={icons.user}
+                                >
                                     About
                                 </NavLinkItem>
                             </li>
                             <li className={cx('nav__item-wrap')}>
                                 <NavLinkItem
+                                    onClick={handleHiddenMenu}
                                     className={cx('nav-item')}
                                     to={routes.project}
                                     icon={icons.project}
@@ -85,6 +100,7 @@ const Header = ({ className: cusClassName }: { className?: string }) => {
                             </li>
                             <li className={cx('nav__item-wrap')}>
                                 <NavLinkItem
+                                    onClick={handleHiddenMenu}
                                     className={cx('nav-item')}
                                     to={routes.resume}
                                     icon={icons.resume}
