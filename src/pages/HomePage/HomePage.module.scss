@@ -1,5 +1,9 @@
 @use '~assets/sass/abstracts';
 
+.home {
+    overflow-x: hidden;
+}
+
 .greet {
     display: flex;
     flex-direction: column;

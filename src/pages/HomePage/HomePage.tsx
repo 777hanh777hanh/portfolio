@@ -10,6 +10,7 @@ import { imageSvg } from '~assets/images';
 
 import styles from './HomePage.module.scss';
 import icons from '~/assets/icons';
+import Magnetic from '~components/Magnetic';
 
 const HomePage = () => {
     const cx = useClassNames(styles);
@@ -85,13 +86,15 @@ const HomePage = () => {
                             </p>
                         </div>
                         <div className="col col-12 col-lg-5">
-                            <div className={cx('greet__image-wrapper')}>
-                                <img
-                                    className={cx('greet__img')}
-                                    src={imageSvg.hello}
-                                    alt="Front-end Developer"
-                                />
-                            </div>
+                            <Magnetic>
+                                <div className={cx('greet__image-wrapper')}>
+                                    <img
+                                        className={cx('greet__img')}
+                                        src={imageSvg.hello}
+                                        alt="Front-end Developer"
+                                    />
+                                </div>
+                            </Magnetic>
                         </div>
                     </div>
                 </section>
