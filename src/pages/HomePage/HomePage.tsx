@@ -101,7 +101,7 @@ const HomePage = () => {
 
                 {/* Socials */}
                 <section className={cx('socials')}>
-                    <h2 className={cx('socials__title')}>FINE ME ON</h2>
+                    <h2 className={cx('socials__title')}>FIND ME ON</h2>
                     <h2 className={cx('socials__desc')}>Feel free to connect with me</h2>
                     <ul className={cx('socials__list')}>
                         <li>
