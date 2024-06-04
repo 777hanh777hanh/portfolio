@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useClassNames } from '~/hooks';
@@ -6,12 +7,37 @@ import { routes } from '~/routes';
 import Logo from '~components/Logo';
 import icons from '~assets/icons';
 import NavLinkItem from '~components/NavLinkItem';
-import { useState } from 'react';
 
 const Header = ({ className: cusClassName }: { className?: string }) => {
     const cx = useClassNames(styles);
     const classes = cusClassName ? cusClassName : '';
     const [isShow, setIsShow] = useState(false);
+    const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+
+    const handleResize = () => {
+        setWidthScreen(window.innerWidth);
+    };
+
+    window.addEventListener('load', handleResize);
+    window.addEventListener('resize', handleResize);
+
+    useEffect(() => {
+        document.documentElement.addEventListener('click', handleCloseHeader);
+
+        return () => {
+            document.documentElement.removeEventListener('click', handleCloseHeader);
+        };
+        // eslint-disable-next-line
+    }, []);
+
+    const handleCloseHeader: (e: MouseEvent) => void = (e) => {
+        if (widthScreen <= 991.98 && isShow) {
+            const targetElement = e.target as HTMLElement;
+            if (targetElement && !targetElement.closest('header')) {
+                setIsShow(false);
+            }
+        }
+    };
 
     return (
         <header className={cx('header', classes, { show: isShow })}>

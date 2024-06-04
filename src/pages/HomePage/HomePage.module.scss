@@ -11,17 +11,38 @@
     height: 650px;
     min-height: 100dvh;
 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @include abstracts.screen(md) {
+        margin-top: 40px;
+    }
+
     &__text {
         font-family: var(--ff);
         color: var(--text-color);
-        font-size: 5.6rem;
+        font-size: 5rem;
         font-weight: 700;
         line-height: 150%;
+
+        @include abstracts.screen(md) {
+            font-size: 4rem;
+        }
+
+        &--animation {
+            margin-top: 40px;
+            font-weight: 500;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+        }
     }
 
     &__waving-hand {
         display: inline-block;
         transform-origin: 70% 70%;
+        -webkit-animation: waving-hand-animation 2s linear infinite;
         animation: waving-hand-animation 2s linear infinite;
     }
 
@@ -33,7 +54,11 @@
         max-width: 450px;
         height: 0;
         padding-bottom: 62.5%;
-        background-color: var(--primary-color);
+        background-color: transparent;
+
+        @include abstracts.screen(md) {
+            margin-right: auto;
+        }
     }
 
     &__img {
@@ -41,12 +66,17 @@
         inset: 0;
         width: 100%;
         height: 100%;
+        -o-object-fit: contain;
         object-fit: contain;
     }
 }
 
 .introduce {
     padding: 60px 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     &__title {
         font-family: var(--ff);
@@ -54,6 +84,10 @@
         font-size: 5.6rem;
         font-weight: 700;
         line-height: 150%;
+
+        @include abstracts.screen(md) {
+            font-size: 4rem;
+        }
     }
 
     &__desc {
@@ -62,6 +96,10 @@
         font-size: 2.8rem;
         font-weight: 400;
         line-height: 120%;
+
+        @include abstracts.screen(md) {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -71,12 +109,21 @@
     padding: 60px 20px;
     text-align: center;
 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
     &__title {
         font-family: var(--ff);
         color: var(--text-color);
         font-size: 4.8rem;
         font-weight: 700;
         line-height: 150%;
+
+        @include abstracts.screen(md) {
+            font-size: 4rem;
+        }
     }
 
     &__desc {
@@ -86,6 +133,10 @@
         text-transform: uppercase;
         font-weight: 400;
         line-height: 150%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__list {
@@ -95,27 +146,73 @@
         gap: 50px;
 
         margin-top: 40px;
+
+        @include abstracts.screen(md) {
+            gap: 30px;
+            flex-wrap: wrap;
+        }
     }
 
     &__link {
         display: flex;
         align-items: center;
         justify-content: center;
+
         width: 50px;
-        border-radius: 50%;
         overflow: hidden;
+
+        @include abstracts.screen(md) {
+            width: 40px;
+        }
+        @include abstracts.screen(sm) {
+            width: 36px;
+        }
+        @include abstracts.screen(xs) {
+            width: 33px;
+        }
     }
 
     &__img {
         width: 100%;
         height: 100%;
+        -o-object-fit: cover;
         object-fit: cover;
+
+        -webkit-filter: var(--socials-icon-color);
 
         filter: var(--socials-icon-color);
 
         &:hover {
+            -webkit-filter: var(--socials-icon-hover-color);
             filter: var(--socials-icon-hover-color);
         }
+    }
+}
+
+@-webkit-keyframes waving-hand-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(14deg);
+    }
+    20% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    } /* Reset for the last half to pause */
+    100% {
+        transform: rotate(0deg);
     }
 }
 

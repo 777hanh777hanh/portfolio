@@ -1,9 +1,15 @@
 import { useEffect } from 'react';
+import Lottie from 'lottie-react';
+
 import { updateTitle } from '~/utils';
 import { useClassNames } from '~/hooks';
+import { links } from '~/routes';
+import { TextAnimation } from '~components/TextAnimation';
+import { lottieFiles } from '~assets/images';
+import { imageSvg } from '~assets/images';
+
 import styles from './HomePage.module.scss';
 import icons from '~/assets/icons';
-import { links } from '~/routes';
 
 const HomePage = () => {
     const cx = useClassNames(styles);
@@ -19,7 +25,7 @@ const HomePage = () => {
                 {/* Greeting */}
                 <section className={cx('greet')}>
                     <div className="row justify-content-center align-items-center">
-                        <div className="col col-7">
+                        <div className="col col-12 col-lg-7">
                             <div className="greet__content">
                                 <h4 className={cx('greet__text')}>
                                     Hi There!
@@ -28,15 +34,21 @@ const HomePage = () => {
                                 <h3 className={cx('greet__text')}>
                                     I am <mark className={cx('highlight-text')}>Tran Thien Thanh</mark>
                                 </h3>
-                                <h2 className={cx('greet__text')}>
-                                    <mark className={cx('highlight-text')}>Web Developer |</mark>
+                                <h2 className={cx('greet__text', 'greet__text--animation')}>
+                                    <mark className={cx('highlight-text')}>
+                                        <TextAnimation />
+                                    </mark>
                                 </h2>
                             </div>
                         </div>
 
-                        <div className="col col-5">
+                        <div className="col col-12 col-lg-5">
                             <div className={cx('greet__image-wrapper')}>
-                                <img className={cx('greet__img')} src="" alt="Front-end Developer" />
+                                <Lottie
+                                    className={cx('greet__img')}
+                                    animationData={lottieFiles.coder}
+                                    loop={true}
+                                />
                             </div>
                         </div>
                     </div>
@@ -45,7 +57,7 @@ const HomePage = () => {
                 {/* Introduce */}
                 <section className={cx('introduce')}>
                     <div className="row justify-content-center align-items-center">
-                        <div className="col col-7">
+                        <div className="col col-12 col-lg-7">
                             <h2 className={cx('introduce__title')}>
                                 <mark className={cx('highlight-text', 'highlight-text--ff')}>Introduce </mark>
                                 Myself
@@ -72,9 +84,13 @@ const HomePage = () => {
                                 Progress and innovation are always what I look forward to and believe in
                             </p>
                         </div>
-                        <div className="col col-5">
+                        <div className="col col-12 col-lg-5">
                             <div className={cx('greet__image-wrapper')}>
-                                <img className={cx('greet__img')} src="" alt="Front-end Developer" />
+                                <img
+                                    className={cx('greet__img')}
+                                    src={imageSvg.hello}
+                                    alt="Front-end Developer"
+                                />
                             </div>
                         </div>
                     </div>

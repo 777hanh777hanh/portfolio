@@ -84,6 +84,8 @@
         -webkit-animation: none;
         animation: none;
         background-color: var(--header-bg-color);
+        position: -webkit-sticky;
+        position: sticky;
     }
 
     &__row {

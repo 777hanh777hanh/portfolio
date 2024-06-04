@@ -31,7 +31,7 @@ const Footer: FooterProps = ({ className: cusClassName }) => {
                     <div className={cx('footer__col', 'footer__socials')}>
                         <a
                             target="_blank"
-                            rel="no-reference"
+                            rel="noreferrer"
                             href={links.github}
                             className={cx('footer__link')}
                         >
@@ -39,23 +39,18 @@ const Footer: FooterProps = ({ className: cusClassName }) => {
                         </a>
                         <a
                             target="_blank"
-                            rel="no-reference"
+                            rel="noreferrer"
                             href={links.linkedin}
                             className={cx('footer__link')}
                         >
                             <img className={cx('footer__icon')} src={icons.linkedin} alt="Linkedin" />
                         </a>
-                        <a
-                            target="_blank"
-                            rel="no-reference"
-                            href={links.mail}
-                            className={cx('footer__link')}
-                        >
+                        <a target="_blank" rel="noreferrer" href={links.mail} className={cx('footer__link')}>
                             <img className={cx('footer__icon')} src={icons.mail} alt="Mail" />
                         </a>
                         <a
                             target="_blank"
-                            rel="no-reference"
+                            rel="noreferrer"
                             href={links.facebook}
                             className={cx('footer__link')}
                         >
