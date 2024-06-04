@@ -49,6 +49,12 @@
             }
         }
     }
+
+    &__item-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .header {
@@ -92,7 +98,7 @@
         align-items: center;
         cursor: pointer;
 
-        margin: 0 auto;
+        margin: auto auto;
         padding: 4px 11px;
 
         background-color: var(--header-cta-bg-color);

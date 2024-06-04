@@ -38,17 +38,17 @@ const Header = ({ className: cusClassName }: { className?: string }) => {
                     {/* Navigation */}
                     <nav className={cx('navbar', { show: isShow })}>
                         <ul className={cx('nav')}>
-                            <li>
+                            <li className={cx('nav__item-wrap')}>
                                 <NavLinkItem className={cx('nav-item')} to={routes.home} icon={icons.home}>
                                     Home
                                 </NavLinkItem>
                             </li>
-                            <li>
+                            <li className={cx('nav__item-wrap')}>
                                 <NavLinkItem className={cx('nav-item')} to={routes.about} icon={icons.user}>
                                     About
                                 </NavLinkItem>
                             </li>
-                            <li>
+                            <li className={cx('nav__item-wrap')}>
                                 <NavLinkItem
                                     className={cx('nav-item')}
                                     to={routes.project}
@@ -57,7 +57,7 @@ const Header = ({ className: cusClassName }: { className?: string }) => {
                                     Project
                                 </NavLinkItem>
                             </li>
-                            <li>
+                            <li className={cx('nav__item-wrap')}>
                                 <NavLinkItem
                                     className={cx('nav-item')}
                                     to={routes.resume}
@@ -66,7 +66,7 @@ const Header = ({ className: cusClassName }: { className?: string }) => {
                                     Resume
                                 </NavLinkItem>
                             </li>
-                            <li>
+                            <li className={cx('nav__item-wrap')}>
                                 <a
                                     target="_blank"
                                     href={routes.source}
