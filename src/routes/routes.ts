@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomePage } from '~/pages';
+import { HomePage, AboutPage } from '~/pages';
 
 const routes = {
     home: '/',
@@ -26,6 +26,10 @@ const publicRoutes: RoutesProps[] = [
     {
         path: `${routes.home}/index.html`,
         component: HomePage,
+    },
+    {
+        path: `${routes.about}`,
+        component: AboutPage,
     },
     // ...
 ];
