@@ -1,0 +1,9 @@
+@use '~assets/sass/abstracts';
+
+.main {
+    margin-top: var(--header-height);
+
+    @include abstracts.screen(md) {
+        margin-top: 0;
+    }
+}

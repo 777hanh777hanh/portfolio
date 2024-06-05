@@ -1,19 +1,34 @@
-import { ReactNode, useLayoutEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useClassNames } from '~/hooks';
 import styles from './Magnetic.module.scss';
 
 const Magnetic = ({ children }: { children: ReactNode }) => {
+    const [isResizing, setIsResizing] = useState(false);
     const [widthScreen, setWidthScreen] = useState(window.innerWidth);
     const magneticRef = useRef(null);
 
     const cx = useClassNames(styles);
 
-    const handleResize = () => {
-        setWidthScreen(window.innerWidth);
-    };
+    useEffect(() => {
+        let resizeTimer: NodeJS.Timeout | undefined;
 
-    window.addEventListener('load', handleResize);
-    window.addEventListener('resize', handleResize);
+        const handleResize = () => {
+            setIsResizing(true);
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                setIsResizing(false);
+                setWidthScreen(window.innerWidth);
+            }, 300);
+        };
+
+        window.addEventListener('load', handleResize);
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('load', handleResize);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     useLayoutEffect(() => {
         const item = magneticRef.current as HTMLDivElement | null;
@@ -35,7 +50,7 @@ const Magnetic = ({ children }: { children: ReactNode }) => {
             if (item) item.style.transform = ``;
         };
 
-        if (item && widthScreen >= 991.98) {
+        if (!isResizing && item && widthScreen >= 991.98) {
             item.addEventListener('mousemove', handleMagnetic);
             item.addEventListener('mouseout', handleRemoveMagnetic);
         }
