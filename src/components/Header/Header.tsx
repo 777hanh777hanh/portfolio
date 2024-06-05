@@ -67,6 +67,15 @@ const Header = forwardRef(
             setIsShow(false);
         }, []);
 
+        const handleResetScrollTop = useCallback(() => {
+            window.scrollTo(0, 0);
+        }, []);
+
+        const handleNavLinkClick = useCallback(() => {
+            handleHiddenMenu();
+            handleResetScrollTop();
+        }, []);
+
         return (
             <header className={cx('header', classes, { show: isShow })} ref={ref}>
                 <div className="container">
@@ -94,7 +103,7 @@ const Header = forwardRef(
                             <ul className={cx('nav')}>
                                 <li className={cx('nav__item-wrap')}>
                                     <NavLinkItem
-                                        onClick={handleHiddenMenu}
+                                        onClick={handleNavLinkClick}
                                         className={cx('nav-item')}
                                         to={routes.home}
                                         icon={icons.home}
@@ -104,7 +113,7 @@ const Header = forwardRef(
                                 </li>
                                 <li className={cx('nav__item-wrap')}>
                                     <NavLinkItem
-                                        onClick={handleHiddenMenu}
+                                        onClick={handleNavLinkClick}
                                         className={cx('nav-item')}
                                         to={routes.about}
                                         icon={icons.user}
@@ -114,7 +123,7 @@ const Header = forwardRef(
                                 </li>
                                 <li className={cx('nav__item-wrap')}>
                                     <NavLinkItem
-                                        onClick={handleHiddenMenu}
+                                        onClick={handleNavLinkClick}
                                         className={cx('nav-item')}
                                         to={routes.project}
                                         icon={icons.project}
@@ -124,7 +133,7 @@ const Header = forwardRef(
                                 </li>
                                 <li className={cx('nav__item-wrap')}>
                                     <NavLinkItem
-                                        onClick={handleHiddenMenu}
+                                        onClick={handleNavLinkClick}
                                         className={cx('nav-item')}
                                         to={routes.resume}
                                         icon={icons.resume}

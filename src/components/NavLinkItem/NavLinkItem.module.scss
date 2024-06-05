@@ -51,6 +51,10 @@
 
         transition: 0.4s linear;
         transition-property: width;
+
+        @include abstracts.screen(md) {
+            content: none;
+        }
     }
 }
 
