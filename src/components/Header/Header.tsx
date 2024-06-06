@@ -73,6 +73,7 @@ const Header = forwardRef(
         const handleNavLinkClick = useCallback(() => {
             handleHiddenMenu();
             handleResetScrollTop();
+            // eslint-disable-next-line
         }, []);
 
         return (
