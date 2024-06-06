@@ -11,6 +11,12 @@
     flex-shrink: 0;
     gap: 10px;
 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    --webkit-tap-highlight-color: transparent;
+
     width: calc(100% / var(--item-per-row) - var(--item-gap));
     aspect-ratio: 1/0.7;
 
@@ -65,7 +71,9 @@
 .icon {
     width: 100%;
     height: 100%;
+    -o-object-fit: contain;
     object-fit: contain;
+    -webkit-filter: var(--socials-icon-hover-color);
     filter: var(--socials-icon-hover-color);
 }
 
@@ -75,6 +83,7 @@
     align-items: center;
     justify-content: center;
     inset: 0;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
