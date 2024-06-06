@@ -3,10 +3,7 @@ import { memo, useEffect } from 'react';
 import { useClassNames } from '~/hooks';
 import { updateTitle } from '~/utils';
 import styles from './AboutPage.module.scss';
-import Discover from '~components/Discover';
-import SkillSet from '~components/SkillSet';
-import ToolUsed from '~components/ToolUsed';
-import GithubCalenderComponent from '~components/GithubCalender';
+import { Discover, SkillSet, ToolUsed, GithubCalender } from '~/components';
 
 const AboutPage = memo(() => {
     const cx = useClassNames(styles);
@@ -29,7 +26,7 @@ const AboutPage = memo(() => {
                 <ToolUsed />
 
                 {/* Github Calender */}
-                <GithubCalenderComponent />
+                <GithubCalender />
             </div>
         </div>
     );

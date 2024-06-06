@@ -1,0 +1,87 @@
+@use '~assets/sass/abstracts';
+
+// Socials
+
+.socials {
+    padding: 60px 20px;
+    text-align: center;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &__title {
+        font-family: var(--ff);
+        color: var(--text-color);
+        font-size: 4.8rem;
+        font-weight: 700;
+        line-height: 150%;
+
+        @include abstracts.screen(md) {
+            font-size: 4rem;
+        }
+    }
+
+    &__desc {
+        font-family: var(--ff);
+        color: var(--text-color);
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 150%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+
+        margin-top: 40px;
+
+        @include abstracts.screen(md) {
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 50px;
+        overflow: hidden;
+
+        @include abstracts.screen(md) {
+            width: 40px;
+        }
+        @include abstracts.screen(sm) {
+            width: 36px;
+        }
+        @include abstracts.screen(xs) {
+            width: 33px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+
+        -webkit-filter: var(--socials-icon-color);
+
+        filter: var(--socials-icon-color);
+
+        &:hover {
+            -webkit-filter: var(--socials-icon-hover-color);
+            filter: var(--socials-icon-hover-color);
+        }
+    }
+}

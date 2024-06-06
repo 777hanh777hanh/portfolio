@@ -10,7 +10,13 @@ const GithubCalender = () => {
         <div className={cx('wrapper')}>
             <h2 className={cx('title')}>Days I Code</h2>
             <GitHubCalendar
-                style={{ width: '100%' }}
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    flexBasis: '100%',
+                }}
                 username="777hanh777hanh"
                 blockSize={12}
                 blockMargin={4}

@@ -1,4 +1,4 @@
-import SkillList from '~components/SkillList';
+import { SkillList } from '~/components';
 import { myData } from '~/data';
 import { useClassNames } from '~/hooks';
 import styles from './ToolUsed.module.scss';

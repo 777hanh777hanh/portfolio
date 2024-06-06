@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import { useClassNames } from '~/hooks';
 import styles from './Header.module.scss';
 import { routes } from '~/routes';
-import Logo from '~components/Logo';
 import icons from '~assets/icons';
-import NavLinkItem from '~components/NavLinkItem';
+import { Logo, NavLinkItem } from '~/components';
 
 type HeaderProps = {
     className?: string;
