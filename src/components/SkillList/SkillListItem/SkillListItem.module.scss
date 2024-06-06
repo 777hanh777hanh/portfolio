@@ -12,10 +12,10 @@
     gap: 10px;
 
     -webkit-user-select: none;
+    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    --webkit-tap-highlight-color: transparent;
 
     width: calc(100% / var(--item-per-row) - var(--item-gap));
     aspect-ratio: 1/0.7;

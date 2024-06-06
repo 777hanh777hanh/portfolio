@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -24,7 +25,6 @@ select,
 label,
 textarea {
     color: inherit;
-    -webkit-tap-highlight-color: transparent;
 }
 
 a {
