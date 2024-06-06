@@ -1,0 +1,35 @@
+@use '~assets/sass/abstracts';
+
+.wrapper {
+    padding: 60px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 40px;
+
+    font-family: var(--ff);
+    color: var(--text-color);
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: center;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @include abstracts.screen(md) {
+        margin-bottom: 30px;
+        font-size: 4rem;
+    }
+
+    @include abstracts.screen(sm) {
+        margin-bottom: 20px;
+        font-size: 4rem;
+    }
+}

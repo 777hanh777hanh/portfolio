@@ -1,0 +1,100 @@
+@use '~assets/sass/abstracts';
+
+.item {
+    --item-per-row: 5;
+    --item-gap: 24px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 10px;
+
+    width: calc(100% / var(--item-per-row) - var(--item-gap));
+    aspect-ratio: 1/0.7;
+
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 150%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+    perspective: 500px;
+
+    @include abstracts.screen(lg) {
+        --item-per-row: 4;
+    }
+
+    @include abstracts.screen(md) {
+        --item-per-row: 3;
+    }
+    @include abstracts.screen(sm) {
+        --item-per-row: 2;
+    }
+
+    &:hover {
+        .content {
+            transform: rotateY(180deg);
+        }
+    }
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.image {
+    position: relative;
+    max-height: 120px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: var(--socials-icon-hover-color);
+}
+
+.image,
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    backface-visibility: hidden;
+}
+
+.name {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    font-size: 3rem;
+    font-family: var(--ff);
+    text-transform: uppercase;
+    transform: rotateY(180deg);
+
+    @include abstracts.screen(md) {
+        font-size: 2.6rem;
+    }
+    @include abstracts.screen(sm) {
+        font-size: 2rem;
+    }
+    @include abstracts.screen(xs) {
+        font-size: clamp(1.6rem, 2vw, 2.6rem);
+    }
+}

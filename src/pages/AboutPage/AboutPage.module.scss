@@ -1,0 +1,13 @@
+@use '~assets/sass/abstracts';
+
+.about-page {
+    margin-bottom: 80px;
+
+    @include abstracts.screen(md) {
+        margin-bottom: 60px;
+    }
+
+    @include abstracts.screen(sm) {
+        margin-bottom: 40px;
+    }
+}

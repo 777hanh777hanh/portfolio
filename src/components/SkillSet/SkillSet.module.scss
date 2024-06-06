@@ -1,0 +1,45 @@
+@use '~assets/sass/abstracts';
+
+// SkillSet
+.skillSet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
+    min-height: calc(100dvh - var(--header-height) * 2);
+
+    @include abstracts.screen(md) {
+        padding: 40px 0;
+        height: auto;
+    }
+
+    @include abstracts.screen(sm) {
+        padding: 30px 0;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+
+        font-family: var(--ff);
+        color: var(--text-color);
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 150%;
+        text-align: center;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 30px;
+            font-size: 4rem;
+        }
+
+        @include abstracts.screen(sm) {
+            margin-bottom: 20px;
+            font-size: 4rem;
+        }
+    }
+}
