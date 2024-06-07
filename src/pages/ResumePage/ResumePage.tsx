@@ -57,9 +57,11 @@ const ResumePage = () => {
     return (
         <section className={cx('resume')}>
             <div className="container">
-                <Document file={resumeFile} className="resume__view">
-                    <Page pageNumber={1} scale={scale} />
-                </Document>
+                <div className="row d-flex justify-content-center">
+                    <Document file={resumeFile}>
+                        <Page pageNumber={1} scale={scale} />
+                    </Document>
+                </div>
 
                 <button className={cx('resume__btn')}>
                     <img src={icons.download} alt="Download CV" className={cx('resume__icon')} />
