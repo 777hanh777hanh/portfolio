@@ -8,6 +8,7 @@ import resume from './resume.svg';
 import project from './project.svg';
 import branch from './branch.svg';
 import eye from './eye.svg';
+import download from './download.svg';
 
 const images = {
     fb,
@@ -20,6 +21,7 @@ const images = {
     project,
     branch,
     eye,
+    download,
 };
 
 export default images;

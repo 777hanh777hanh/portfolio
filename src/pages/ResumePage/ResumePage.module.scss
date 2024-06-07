@@ -1,0 +1,59 @@
+@use '~assets/sass/abstracts';
+
+.resume {
+    margin-bottom: 80px;
+
+    @include abstracts.screen(md) {
+        margin-bottom: 60px;
+    }
+
+    @include abstracts.screen(sm) {
+        margin-bottom: 40px;
+    }
+
+    &__view {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+            color: var(--text-highlight-color);
+
+            .resume__icon {
+                filter: var(--socials-icon-hover-color);
+            }
+        }
+
+        @include abstracts.screen(sm) {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        filter: var(--socials-icon-color);
+        transition: filter 0.3s linear;
+    }
+}
