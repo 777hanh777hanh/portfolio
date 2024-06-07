@@ -13,3 +13,5 @@ export { default as SkillSet } from './SkillSet';
 export { default as Socials } from './Socials';
 export { default as TextAnimation } from './TextAnimation';
 export { default as ToolUsed } from './ToolUsed';
+export { default as ListProject } from './ListProject';
+export { default as CardProject } from './CardProject';

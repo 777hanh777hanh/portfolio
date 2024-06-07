@@ -1,5 +1,5 @@
 import { SkillList } from '~/components';
-import { myData } from '~/data';
+import { mySkills } from '~/data';
 import { useClassNames } from '~/hooks';
 import styles from './SkillSet.module.scss';
 
@@ -13,7 +13,7 @@ const SkillSet = () => {
             </h2>
             {/* List */}
             <div className={cx('skillSet__content')}>
-                <SkillList dataList={myData.skills} />
+                <SkillList dataList={mySkills.skills} />
             </div>
         </section>
     );

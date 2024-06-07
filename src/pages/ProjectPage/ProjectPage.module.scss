@@ -1,0 +1,56 @@
+@use '~assets/sass/abstracts';
+
+.projectsP {
+    margin-bottom: 80px;
+
+    @include abstracts.screen(md) {
+        margin-bottom: 60px;
+    }
+
+    @include abstracts.screen(sm) {
+        margin-bottom: 40px;
+    }
+
+    &__header {
+        padding: 60px 0;
+        text-align: center;
+        font-family: var(--ff);
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        @include abstracts.screen(md) {
+            padding: 40px 0;
+        }
+
+        @include abstracts.screen(sm) {
+            padding: 30px 0;
+        }
+    }
+
+    &__title {
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-size: 5.6rem;
+        font-weight: 700;
+        line-height: 150.455%;
+
+        @include abstracts.screen(md) {
+            font-size: 4rem;
+        }
+    }
+
+    &__subtitle {
+        color: var(--text-color);
+        font-size: 2.8rem;
+        font-weight: 400;
+        line-height: 120%;
+        text-transform: uppercase;
+
+        @include abstracts.screen(md) {
+            font-size: 2rem;
+        }
+    }
+}

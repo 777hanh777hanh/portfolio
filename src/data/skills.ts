@@ -38,10 +38,10 @@ const skills = [
         icon: imageSvg.nodejs,
         title: 'Node.js',
     },
-    {
-        icon: imageSvg.express,
-        title: 'Express',
-    },
+    // {
+    //     icon: imageSvg.express,
+    //     title: 'Express',
+    // },
     {
         icon: imageSvg.mongodb,
         title: 'MongoDB',

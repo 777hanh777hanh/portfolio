@@ -16,3 +16,10 @@ $grid-breakpoints: (
         @warn "Invalid breakpoint: #{$key}";
     }
 }
+
+@mixin lineClamp($number) {
+    display: -webkit-box;
+    -webkit-line-clamp: $number;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

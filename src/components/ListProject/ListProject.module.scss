@@ -1,0 +1,32 @@
+@use '~assets/sass/abstracts';
+
+// List
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row: 300px;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+    gap: 40px;
+    row-gap: 48px;
+    align-content: center;
+    justify-content: space-evenly;
+
+    @include abstracts.screen(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include abstracts.screen(sm) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.card {
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 0;
+}

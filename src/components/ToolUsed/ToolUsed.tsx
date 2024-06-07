@@ -1,5 +1,5 @@
 import { SkillList } from '~/components';
-import { myData } from '~/data';
+import { mySkills } from '~/data';
 import { useClassNames } from '~/hooks';
 import styles from './ToolUsed.module.scss';
 
@@ -13,7 +13,7 @@ const ToolUsed = () => {
             </h2>
             {/* List */}
             <div className={cx('tools__content')}>
-                <SkillList dataList={myData.tools} />
+                <SkillList dataList={mySkills.tools} />
             </div>
         </section>
     );

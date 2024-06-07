@@ -1,2 +1,2 @@
+export { default as links, projectsLink } from './links';
 export * from './routes';
-export { default as links } from './links';

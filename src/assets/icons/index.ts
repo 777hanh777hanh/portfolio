@@ -7,6 +7,7 @@ import user from './user.svg';
 import resume from './resume.svg';
 import project from './project.svg';
 import branch from './branch.svg';
+import eye from './eye.svg';
 
 const images = {
     fb,
@@ -18,6 +19,7 @@ const images = {
     resume,
     project,
     branch,
+    eye,
 };
 
 export default images;
