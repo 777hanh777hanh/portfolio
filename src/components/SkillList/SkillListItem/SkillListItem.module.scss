@@ -26,7 +26,6 @@
     line-height: 150%;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 
-    cursor: pointer;
     perspective: 500px;
 
     @include abstracts.screen(lg) {
@@ -40,7 +39,7 @@
         --item-per-row: 2;
     }
 
-    &:hover {
+    &.show {
         .content {
             transform: rotateY(180deg);
         }

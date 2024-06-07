@@ -44,10 +44,8 @@ function App() {
         }
 
         if (isCookieAlive('load')) {
-            console.log("Cookie 'load' vẫn còn sống.");
             setIsLoading(false);
         } else {
-            console.log("Cookie 'load' đã hết hạn hoặc không tồn tại.");
             setIsLoading(true);
             createCookie('load');
         }

@@ -1,4 +1,4 @@
-import { ReactNode, memo, useEffect, useRef, useState } from 'react';
+import { ReactNode, memo, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useClassNames } from '~/hooks';
 import icons from '~assets/icons';
 import styles from './CardProject.module.scss';
@@ -41,44 +41,56 @@ const CardProject: CardProjectProps = memo(({ project }) => {
             window.removeEventListener('load', handleResize);
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, [isResizing, widthScreen]);
 
     // show card when hover
-    useEffect(() => {
+    useLayoutEffect(() => {
         const card = cardRef.current ? (cardRef.current as HTMLElement) : null;
 
-        const handleMouseMove = () => {
+        const handleMouseMove = (e: MouseEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
             setIsShow(true);
         };
 
-        const handleMouseOut = () => {
+        const handleMouseOut = (e: MouseEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
             setIsShow(false);
         };
 
-        if (card && !isResizing) {
-            card.addEventListener('mousemove', handleMouseMove);
-            card.addEventListener('mouseout', handleMouseOut);
+        const handleClick = (e: MouseEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsShow(!isShow);
+        };
+
+        if (card) {
+            card.addEventListener('click', handleClick);
+            card.addEventListener('mouseenter', handleMouseMove);
+            card.addEventListener('mouseleave', handleMouseOut);
         }
 
         return () => {
             if (card) {
-                card.removeEventListener('mousemove', handleMouseMove);
-                card.removeEventListener('mouseout', handleMouseOut);
+                card.removeEventListener('click', handleClick);
+                card.removeEventListener('mouseenter', handleMouseMove);
+                card.removeEventListener('mouseleave', handleMouseOut);
             }
         };
-    }, [widthScreen, isResizing, isShow]);
+    }, [isShow]);
 
     // show/hide card when click
-    const handleClick = () => {
-        setIsShow(!isShow);
-    };
+    // const handleClick = () => {
+    //     setIsShow(!isShow);
+    // };
 
     const handleNavigate = (href: string = '') => {
         window.open(href);
     };
 
     return (
-        <article className={cx('card__article', { show: isShow })} onClick={handleClick} ref={cardRef}>
+        <article className={cx('card__article', { show: isShow })} ref={cardRef}>
             <div className={cx('card__image')}>
                 <img src={project.image} alt="image" className={cx('card__img')} />
             </div>
