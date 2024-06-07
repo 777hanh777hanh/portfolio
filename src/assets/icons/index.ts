@@ -9,6 +9,8 @@ import project from './project.svg';
 import branch from './branch.svg';
 import eye from './eye.svg';
 import download from './download.svg';
+import back from './back.svg';
+import next from './next.svg';
 
 const images = {
     fb,
@@ -22,6 +24,8 @@ const images = {
     branch,
     eye,
     download,
+    back,
+    next,
 };
 
 export default images;
