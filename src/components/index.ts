@@ -15,3 +15,4 @@ export { default as TextAnimation } from './TextAnimation';
 export { default as ToolUsed } from './ToolUsed';
 export { default as ListProject } from './ListProject';
 export { default as CardProject } from './CardProject';
+export { default as Loader } from './Loader';

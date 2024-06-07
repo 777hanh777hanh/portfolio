@@ -46,4 +46,8 @@ html {
         hue-rotate(317deg) brightness(79%) contrast(84%);
     --socials-icon-hover-color: brightness(0) saturate(100%) invert(77%) sepia(21%) saturate(650%)
         hue-rotate(350deg) brightness(104%) contrast(91%); //#f4c790
+
+    // loader
+    --loader-color-1: #f4c790;
+    --loader-color-2: #55392d80;
 }
