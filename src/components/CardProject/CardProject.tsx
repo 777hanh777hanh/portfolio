@@ -93,24 +93,28 @@ const CardProject: CardProjectProps = memo(({ project }) => {
 
             <div className={cx('card__data')}>
                 <div className={cx('card__cta')}>
-                    <button
-                        onClick={() => {
-                            handleNavigate(project.src);
-                        }}
-                        className={cx('card__button')}
-                    >
-                        <img className={cx('card__icon')} src={icons.branch} />
-                        Source
-                    </button>
-                    <button
-                        onClick={() => {
-                            handleNavigate(project.demo);
-                        }}
-                        className={cx('card__button')}
-                    >
-                        <img className={cx('card__icon')} src={icons.eye} />
-                        Source
-                    </button>
+                    {project.src && (
+                        <button
+                            onClick={() => {
+                                handleNavigate(project.src);
+                            }}
+                            className={cx('card__button')}
+                        >
+                            <img className={cx('card__icon')} src={icons.branch} />
+                            Source
+                        </button>
+                    )}
+                    {project.demo && (
+                        <button
+                            onClick={() => {
+                                handleNavigate(project.demo);
+                            }}
+                            className={cx('card__button')}
+                        >
+                            <img className={cx('card__icon')} src={icons.eye} />
+                            View
+                        </button>
+                    )}
                 </div>
             </div>
         </article>

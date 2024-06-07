@@ -168,24 +168,24 @@
     }
 
     &__article.show &__data {
-        -webkit-animation: show-data 1s forwards;
-        animation: show-data 1s forwards;
+        -webkit-animation: show-data 0.6s forwards;
+        animation: show-data 0.6s forwards;
         opacity: 1;
         transition: opacity 0.3s;
     }
     &__article.show {
-        -webkit-animation: remove-overflow 2s forwards;
-        animation: remove-overflow 2s forwards;
+        -webkit-animation: remove-overflow 1.2s forwards;
+        animation: remove-overflow 1.2s forwards;
     }
 
     &__article:not(.show) {
-        -webkit-animation: show-overflow 2s forwards;
-        animation: show-overflow 2s forwards;
+        -webkit-animation: show-overflow 1.2s forwards;
+        animation: show-overflow 1.2s forwards;
     }
 
     &__article:not(.show) &__data {
-        -webkit-animation: remove-data 1s forwards;
-        animation: remove-data 1s forwards;
+        -webkit-animation: remove-data 0.6s forwards;
+        animation: remove-data 0.6s forwards;
     }
 }
 
