@@ -9,7 +9,8 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import icons from '~assets/icons';
 
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const ResumePage = () => {
     const cx = useClassNames(styles);
@@ -60,6 +61,8 @@ const ResumePage = () => {
                 <div className="row d-flex justify-content-center">
                     <Document file={resumeFile}>
                         <Page pageNumber={1} scale={scale} />
+                        <Page pageNumber={2} scale={scale} />
+                        <Page pageNumber={3} scale={scale} />
                     </Document>
                 </div>
 
