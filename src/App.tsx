@@ -1,7 +1,7 @@
-import { useLayoutEffect, useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Routes } from 'react-router-dom';
 
-import { renderMetaTag, renderRoutes } from '~/utils';
+import { renderRoutes } from '~/utils';
 import { publicRoutes } from '~/routes';
 import { Loader } from '~/components';
 
@@ -60,10 +60,6 @@ function App() {
             clearTimeout(timer);
         };
     });
-
-    useEffect(() => {
-        renderMetaTag();
-    }, []);
 
     return (
         <>
