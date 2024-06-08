@@ -1,7 +1,7 @@
 import { memo, useEffect } from 'react';
 
 import { useClassNames } from '~/hooks';
-import { updateTitle } from '~/utils';
+import { updateTitle, renderLinkCanonical } from '~/utils';
 import styles from './AboutPage.module.scss';
 import { Discover, SkillSet, ToolUsed, GithubCalender } from '~/components';
 
@@ -11,6 +11,7 @@ const AboutPage = memo(() => {
     // Update title of HomePage
     useEffect(() => {
         updateTitle('About');
+        renderLinkCanonical();
     }, []);
 
     return (

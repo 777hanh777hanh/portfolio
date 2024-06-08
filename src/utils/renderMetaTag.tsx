@@ -1,6 +1,6 @@
-const url = 'https://www.tranthienthanh.online';
-const image = 'https://i.imgur.com/h4OhVBq.png';
+import { links } from '~/routes';
 
+const image = 'https://i.imgur.com/h4OhVBq.png';
 const title = 'Personal Portfolio | Tran Thien Thanh';
 const desc = 'This project is my portfolio which features some of my skills, GitHub projects, and my resume.';
 const keywords = 'portfolio, Tran Thien Thanh, React, HTML, CSS, SCSS, TypeScript, JavaScript';
@@ -56,7 +56,7 @@ const dataMeta = [
     },
     {
         property: 'og:url',
-        content: url,
+        content: links.url,
     },
     {
         property: 'og:title',
@@ -76,7 +76,7 @@ const dataMeta = [
     },
     {
         property: 'twitter:url',
-        content: url,
+        content: links.url,
     },
     {
         property: 'twitter:title',

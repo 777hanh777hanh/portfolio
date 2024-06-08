@@ -1,4 +1,5 @@
 const links = {
+    url: 'https://www.tranthienthanh.online',
     facebook: 'https://facebook.com/777hanh',
     github: 'https://github.com/777hanh777hanh',
     linkedin: 'https://linkedin.com/in/thanhthientran1511',

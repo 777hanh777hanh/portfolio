@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { updateTitle } from '~/utils';
+import { updateTitle, renderLinkCanonical } from '~/utils';
 import { useClassNames } from '~/hooks';
 import styles from './ProjectPage.module.scss';
 import { ListProject } from '~/components';
@@ -11,6 +11,7 @@ const ProjectPage = () => {
     // Update title of HomePage
     useEffect(() => {
         updateTitle('Projects');
+        renderLinkCanonical();
     }, []);
 
     return (

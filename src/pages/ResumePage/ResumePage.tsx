@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { updateTitle } from '~/utils';
+import { updateTitle, renderLinkCanonical } from '~/utils';
 import { useClassNames } from '~/hooks';
 import styles from './ResumePage.module.scss';
 import resumeFile from '../../assets/docs/cv.pdf';
@@ -63,6 +63,7 @@ const ResumePage = () => {
     // Update title of ResumePage
     useEffect(() => {
         updateTitle('Resume');
+        renderLinkCanonical();
     }, []);
 
     const reflow = (element: HTMLElement) => {

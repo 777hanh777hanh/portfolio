@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { updateTitle } from '~/utils';
+import { updateTitle, renderLinkCanonical } from '~/utils';
 import { useClassNames } from '~/hooks';
 import styles from './HomePage.module.scss';
 import { Greeting, Introduce, Socials } from '~/components';
@@ -11,6 +11,7 @@ const HomePage = () => {
     // Update title of HomePage
     useEffect(() => {
         updateTitle('Home');
+        renderLinkCanonical();
     }, []);
 
     return (
