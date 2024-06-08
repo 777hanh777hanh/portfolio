@@ -15,8 +15,8 @@ const projects: projectsProps[] = [
         description:
             'Developed a static website using HTML, SCSS, and JavaScript based on the design provided in Figma. The project aimed to translate the design prototype into a functional website, focusing on optimizing both structure and performance.',
         image: staticImages.staticWebsite,
-        demo: projectsLink.portfolio.demo,
-        src: projectsLink.portfolio.src,
+        demo: projectsLink.staticWebsite.demo,
+        src: projectsLink.staticWebsite.src,
     },
     // {
     //     title: 'Laptop Sale Application',
