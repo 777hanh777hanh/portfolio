@@ -18,9 +18,9 @@ const Greeting = memo(() => {
                             Hi There!
                             <span className={cx('greet__waving-hand')}>👋🏻</span>
                         </h4>
-                        <h3 className={cx('greet__text')}>
+                        <h1 className={cx('greet__text')}>
                             I am <mark className={cx('highlight-text')}>Tran Thien Thanh</mark>
-                        </h3>
+                        </h1>
                         <h2 className={cx('greet__text', 'greet__text--animation')}>
                             <mark className={cx('highlight-text')}>
                                 <TextAnimation />

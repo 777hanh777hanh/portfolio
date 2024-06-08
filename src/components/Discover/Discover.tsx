@@ -16,13 +16,13 @@ const Discover = memo(() => {
                             <mark className={cx('highlight-text', 'highlight-text--ff')}>Discover </mark>
                             Me !
                         </h2>
-                        <p className={cx('discover__text')}>
+                        <h1 className={cx('discover__text')}>
                             Hi Everyone, I am{' '}
                             <mark className={cx('highlight-text', 'highlight-text--ff')}>Thien Thanh</mark>{' '}
                             from{' '}
                             <mark className={cx('highlight-text', 'highlight-text--ff')}>Ninh Thuan </mark>
                             Province.
-                        </p>
+                        </h1>
                         <p className={cx('discover__text')}>
                             I am{' '}
                             <mark className={cx('highlight-text', 'highlight-text--ff')}>Web Developer</mark>.
