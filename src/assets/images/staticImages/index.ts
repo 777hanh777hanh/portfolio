@@ -4,6 +4,7 @@ import learnit from './learnit.png';
 import besnik from './besnik.png';
 import chatify from './chatify.png';
 import todoApp from './todoApp.png';
+import ogImage from './meta-img.png';
 
 const staticImages = {
     portfolio,
@@ -12,6 +13,7 @@ const staticImages = {
     besnik,
     chatify,
     todoApp,
+    ogImage,
 };
 
 export default staticImages;
