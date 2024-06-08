@@ -115,13 +115,21 @@
 
     &__cta {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         gap: 20px;
+
+        @include abstracts.screen(md) {
+            gap: 16px;
+        }
+        @include abstracts.screen(xs) {
+            gap: 14px;
+        }
     }
 
     &__button {
+        flex: 1;
         padding: 12px 8px;
         display: flex;
         justify-content: center;
