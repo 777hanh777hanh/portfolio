@@ -18,10 +18,10 @@ const createMetaTag = ({
     property?: string;
 }) => {
     const meta = document.createElement('meta');
-    httpEquiv && (meta.httpEquiv = httpEquiv);
-    content && (meta.content = content);
     name && (meta.name = name);
     property && meta.setAttribute('property', property);
+    httpEquiv && (meta.httpEquiv = httpEquiv);
+    content && (meta.content = content);
     document.getElementsByTagName('head')[0].appendChild(meta);
 };
 
