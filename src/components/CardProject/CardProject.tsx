@@ -1,4 +1,4 @@
-import { ReactNode, memo, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { default as React, ReactNode, memo, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useClassNames } from '~/hooks';
 import icons from '~assets/icons';
 import styles from './CardProject.module.scss';
@@ -61,7 +61,6 @@ const CardProject: CardProjectProps = memo(({ project }) => {
 
         const handleClick = (e: MouseEvent) => {
             e.preventDefault();
-            e.stopPropagation();
             setIsShow(!isShow);
         };
 
@@ -80,12 +79,11 @@ const CardProject: CardProjectProps = memo(({ project }) => {
         };
     }, [isShow]);
 
-    // show/hide card when click
-    // const handleClick = () => {
-    //     setIsShow(!isShow);
-    // };
+    const handleNavigate = (e: React.MouseEvent, href: string = '') => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(e.target);
 
-    const handleNavigate = (href: string = '') => {
         window.open(href);
     };
 
@@ -107,8 +105,8 @@ const CardProject: CardProjectProps = memo(({ project }) => {
                 <div className={cx('card__cta')}>
                     {project.src && (
                         <button
-                            onClick={() => {
-                                handleNavigate(project.src);
+                            onClick={(e) => {
+                                handleNavigate(e, project.src);
                             }}
                             className={cx('card__button')}
                         >
@@ -118,8 +116,8 @@ const CardProject: CardProjectProps = memo(({ project }) => {
                     )}
                     {project.demo && (
                         <button
-                            onClick={() => {
-                                handleNavigate(project.demo);
+                            onClick={(e) => {
+                                handleNavigate(e, project.demo);
                             }}
                             className={cx('card__button')}
                         >
