@@ -1,7 +1,6 @@
 import { links } from '~/routes';
-import { staticImages } from '~/assets/images';
 
-const image = staticImages.ogImage;
+const image = 'https://www.tranthienthanh.online/assets/meta-img-C_VNZq7i.png';
 const title = 'Personal Portfolio | Tran Thien Thanh';
 const desc = 'This project is my portfolio which features some of my skills, GitHub projects, and my resume.';
 const keywords = 'portfolio, Tran Thien Thanh, React, HTML, CSS, SCSS, TypeScript, JavaScript';
