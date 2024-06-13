@@ -23,5 +23,5 @@ export default defineConfig({
         // Set port to listen on 3000
         port: 3000,
     },
-    base: './',
+    base: process.env.NODE_ENV === 'development' ? './' : '/portfolio',
 });

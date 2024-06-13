@@ -7,8 +7,7 @@ import GlobalStyles from './components/GlobalStyles/GlobalStyles.tsx';
 import './index.css';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
-// const basename = isDevelopment ? '/' : '/portfolio';
-const basename = isDevelopment ? '/' : '/';
+const basename = isDevelopment ? '/' : '/portfolio';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
