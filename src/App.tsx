@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState } from 'react';
 import { Routes } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import { renderRoutes } from '~/utils';
 import { publicRoutes } from '~/routes';
@@ -63,6 +64,7 @@ function App() {
 
     return (
         <>
+            <SpeedInsights />
             <div className="App">
                 {isLoading && isLoad && <Loader />}
                 {(!isLoading || !isLoad) && <Routes>{renderRoutes(publicRoutes)}</Routes>}

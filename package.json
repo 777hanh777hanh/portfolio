@@ -11,6 +11,7 @@
     "start": "vite"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.12",
     "classnames": "^2.5.1",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
