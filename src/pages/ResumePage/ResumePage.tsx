@@ -144,12 +144,19 @@ const ResumePage = () => {
     // };
 
     const handleDownloadFile = () => {
-        const a = document.createElement('a');
-        a.href = resumeFile;
-        a.download = 'TranThienThanh - CV';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        fetch(resumeFile)
+            .then((response) => response.blob())
+            .then((blob) => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'TranThienThanh-CV.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url); // Clean up the URL object
+            })
+            .catch((error) => console.error('File download failed:', error));
     };
 
     return (
